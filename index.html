@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>NeoKitsune</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* RESET */
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background:#07070a;
+      color:white;
+      font-family:'Orbitron', sans-serif;
+      min-height:100vh;
+    }
+
+    a{
+      text-decoration:none;
+      color:white;
+    }
+
+    ul{
+      list-style:none;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      padding:20px 40px;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      position:sticky;
+      top:0;
+
+      background:rgba(10,10,20,0.7);
+
+      backdrop-filter:blur(12px);
+
+      border-bottom:1px solid rgba(168,85,247,0.3);
+
+      z-index:1000;
+    }
+
+    /* LOGO */
+
+    .logo{
+      font-size:1.6rem;
+      font-weight:700;
+
+      background:linear-gradient(
+        90deg,
+        #7a00ff 0%,
+        #a855f7 80%,
+        #39ff14 100%
+      );
+
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+
+      text-shadow:
+        0 0 10px rgba(122,0,255,0.5),
+        0 0 20px rgba(57,255,20,0.2);
+    }
+
+    /* NAV LINKS */
+
+    .nav-links{
+      display:flex;
+      gap:30px;
+    }
+
+    .nav-links a{
+      position:relative;
+      transition:0.3s ease;
+      font-size:0.95rem;
+    }
+
+    .nav-links a:hover{
+      color:#39ff14;
+      text-shadow:
+        0 0 10px #39ff14;
+    }
+
+    /* UNDERLINE ANIMATION */
+
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+
+      left:0;
+      bottom:-6px;
+
+      width:0%;
+      height:2px;
+
+      background:linear-gradient(
+        90deg,
+        #7a00ff,
+        #39ff14
+      );
+
+      transition:0.3s ease;
+    }
+
+    .nav-links a:hover::after{
+      width:100%;
+    }
+
+    /* HERO SECTION */
+
+    .hero{
+      height:80vh;
+
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero h1{
+      font-size:4rem;
+      margin-bottom:20px;
+
+      background:linear-gradient(
+        90deg,
+        #ffffff,
+        #a855f7,
+        #39ff14
+      );
+
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .hero p{
+      max-width:700px;
+      line-height:1.7;
+      color:#cccccc;
+      margin-bottom:30px;
+    }
+
+    /* BUTTON */
+
+    .btn{
+      padding:14px 28px;
+      border:none;
+      border-radius:12px;
+
+      color:white;
+      font-size:1rem;
+      cursor:pointer;
+
+      background:linear-gradient(
+        90deg,
+        #7a00ff,
+        #a855f7,
+        #39ff14
+      );
+
+      box-shadow:
+        0 0 15px rgba(122,0,255,0.4),
+        0 0 30px rgba(57,255,20,0.2);
+
+      transition:0.3s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+
+      box-shadow:
+        0 0 20px rgba(57,255,20,0.5),
+        0 0 40px rgba(122,0,255,0.6);
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      nav{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .nav-links{
+        gap:16px;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:2.5rem;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="logo">
+      NeoKitsune
+    </div>
+
+    <ul class="nav-links">
+
+      <li><a href="#">Home</a></li>
+
+      <li><a href="#">Trending</a></li>
+
+      <li><a href="#">Movies</a></li>
+
+      <li><a href="#">Genres</a></li>
+
+      <li><a href="#">Search</a></li>
+
+    </ul>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <h1>
+      Welcome to NeoKitsune
+    </h1>
+
+    <p>
+      Explore futuristic anime worlds, legendary stories,
+      and cyberpunk adventures inside the neon universe.
+    </p>
+
+    <button class="btn">
+      Enter The Grid
+    </button>
+
+  </section>
+
+</body>
+</html>
