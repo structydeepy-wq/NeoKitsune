@@ -6,7 +6,7 @@
 
   <title>NeoKitsune</title>
 
-  <!-- Google Font -->
+  <!-- GOOGLE FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -15,6 +15,7 @@
   <style>
 
     /* RESET */
+
     *{
       margin:0;
       padding:0;
@@ -26,6 +27,7 @@
       color:white;
       font-family:'Orbitron', sans-serif;
       min-height:100vh;
+      overflow-x:hidden;
     }
 
     a{
@@ -35,6 +37,24 @@
 
     ul{
       list-style:none;
+    }
+
+    /* ANIMATED GRADIENT */
+
+    @keyframes neonFlow {
+
+      0%{
+        background-position:0% 50%;
+      }
+
+      50%{
+        background-position:100% 50%;
+      }
+
+      100%{
+        background-position:0% 50%;
+      }
+
     }
 
     /* NAVBAR */
@@ -62,15 +82,21 @@
     /* LOGO */
 
     .logo{
+
       font-size:1.6rem;
       font-weight:700;
 
-      background:linear-gradient(
-        90deg,
-        #7a00ff 0%,
-        #a855f7 80%,
-        #39ff14 100%
+      background: linear-gradient(
+        270deg,
+        #7a00ff,
+        #a855f7,
+        #39ff14,
+        #7a00ff
       );
+
+      background-size:600% 600%;
+
+      animation:neonFlow 12s ease infinite;
 
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
@@ -78,6 +104,11 @@
       text-shadow:
         0 0 10px rgba(122,0,255,0.5),
         0 0 20px rgba(57,255,20,0.2);
+
+      filter: drop-shadow(
+        0 0 12px rgba(57,255,20,0.4)
+      );
+
     }
 
     /* NAV LINKS */
@@ -95,14 +126,17 @@
 
     .nav-links a:hover{
       color:#39ff14;
+
       text-shadow:
         0 0 10px #39ff14;
     }
 
-    /* UNDERLINE ANIMATION */
+    /* UNDERLINE EFFECT */
 
     .nav-links a::after{
+
       content:"";
+
       position:absolute;
 
       left:0;
@@ -118,15 +152,17 @@
       );
 
       transition:0.3s ease;
+
     }
 
     .nav-links a:hover::after{
       width:100%;
     }
 
-    /* HERO SECTION */
+    /* HERO */
 
     .hero{
+
       height:80vh;
 
       display:flex;
@@ -135,62 +171,113 @@
       align-items:center;
 
       text-align:center;
+
       padding:20px;
+
     }
 
     .hero h1{
+
       font-size:4rem;
       margin-bottom:20px;
 
-      background:linear-gradient(
-        90deg,
+      background: linear-gradient(
+        270deg,
         #ffffff,
         #a855f7,
-        #39ff14
+        #39ff14,
+        #ffffff
       );
+
+      background-size:400% 400%;
+
+      animation:neonFlow 10s ease infinite;
 
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
+
+      filter: drop-shadow(
+        0 0 18px rgba(122,0,255,0.35)
+      );
+
     }
 
     .hero p{
+
       max-width:700px;
+
       line-height:1.7;
+
       color:#cccccc;
+
       margin-bottom:30px;
+
     }
 
     /* BUTTON */
 
     .btn{
+
       padding:14px 28px;
+
       border:none;
       border-radius:12px;
 
       color:white;
       font-size:1rem;
+
       cursor:pointer;
 
-      background:linear-gradient(
-        90deg,
+      background: linear-gradient(
+        270deg,
         #7a00ff,
         #a855f7,
-        #39ff14
+        #39ff14,
+        #7a00ff
       );
+
+      background-size:400% 400%;
+
+      animation:neonFlow 8s ease infinite;
 
       box-shadow:
         0 0 15px rgba(122,0,255,0.4),
         0 0 30px rgba(57,255,20,0.2);
 
       transition:0.3s ease;
+
     }
 
     .btn:hover{
+
       transform:translateY(-3px);
 
       box-shadow:
         0 0 20px rgba(57,255,20,0.5),
         0 0 40px rgba(122,0,255,0.6);
+
+    }
+
+    /* OPTIONAL GRID BACKGROUND */
+
+    body::before{
+
+      content:"";
+
+      position:fixed;
+
+      inset:0;
+
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+
+      background-size:40px 40px;
+
+      pointer-events:none;
+
+      z-index:-1;
+
     }
 
     /* MOBILE */
